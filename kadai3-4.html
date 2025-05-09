@@ -31,13 +31,15 @@
 
             // 商品購入の関数
             function buyItem(no) {
-                if(items[no-1].stock > 0){
-                    console.log("商品番号"+items[no-1].id+",商品名:"+items[no-1].name+"を購入します。");
-                    items[no-1].stock--;
-                }else {
-                    console.log("商品番号"+items[no-1].id+",商品名:"+items[no-1].name+"を購入します。");
-                    console.log("在庫がありません");  
-                }
+                if (no < 1 || no > items.length) {
+                    console.log("この番号の商品はありません。");
+                } else if (items[no - 1].stock > 0) {
+                    console.log("商品番号: " + items[no - 1].id + ", 商品名: " + items[no - 1].name + " を購入します。");
+                    items[no - 1].stock--;
+                } else {
+                console.log("商品番号: " + items[no - 1].id + ", 商品名: " + items[no - 1].name + " を購入します。");
+                console.log("在庫がありません。");
+    }
                 
                 // ここにコードを書く
                 showItemList(); // 商品一覧の表示関数呼び出し
